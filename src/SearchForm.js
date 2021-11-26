@@ -27,6 +27,6 @@ export default function SearchForm(props){
             <div className="form-footer">
                 <input type="submit" className="btn btn-primary" value="Submit" />
             </div>
-            <div className="validation-message">{props.validation}</div>
+            <div name="validation-message" className="validation-message">{props.validation}</div>
         </form>
 }
