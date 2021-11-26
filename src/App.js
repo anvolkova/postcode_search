@@ -3,12 +3,10 @@ import './App.css';
 import SearchForm from "./SearchForm";
 
 export default function App() {
-  // const [locations, setLocations] = useState();
   const [postcode, setPostcode] = useState("");
   const [suburb, setSuburb] = useState("");
   const [state, setState] = useState("");
   const [validation, setValidation] = useState("");
-  const [message, setMessage] = useState("");
 
   async function postcodeSearch(q){
     try{
@@ -37,7 +35,6 @@ export default function App() {
     event.preventDefault();
 
     setValidation("");
-    setMessage("");
 
     if(!postcode) {
       setValidation("Please enter a postcode");
@@ -93,7 +90,6 @@ export default function App() {
               state={state}
               onStateChange={e => setState(e.target.value)}
               validation={validation}
-              message={message}
               onFormSubmit={handleFormSubmit} />
     </div>
   </>);

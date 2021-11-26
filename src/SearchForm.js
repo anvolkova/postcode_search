@@ -1,5 +1,4 @@
 import React from "react";
-// import './index.css';
 
 export default function SearchForm(props){
     return <form onSubmit={props.onFormSubmit}>
@@ -29,6 +28,5 @@ export default function SearchForm(props){
                 <input type="submit" className="btn btn-primary" value="Submit" />
             </div>
             <div className="validation-message">{props.validation}</div>
-            <div>{props.message}</div>
         </form>
 }
