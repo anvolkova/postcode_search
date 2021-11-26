@@ -73,6 +73,24 @@ it('invalid postcode is reported', async () => {
   expect(validationMessage.textContent).toBe("Please enter 4-digit postcode");
 });
 
+it('postcode is not entered', async () => {
+  await enterAndSubmit('', 'Leichhardt', 'NSW');
+
+  expect(validationMessage.textContent).toBe("Please enter a postcode");
+});
+
+it('suburb is not entered', async () => {
+  await enterAndSubmit('2040', '', 'NSW');
+
+  expect(validationMessage.textContent).toBe("Please enter a suburb name");
+});
+
+it('state is not entered', async () => {
+  await enterAndSubmit('2040', 'Leichhardt', '');
+
+  expect(validationMessage.textContent).toBe("Please enter a state");
+});
+
 it('valid data', async () => {
   jest.spyOn(global, "fetch").mockImplementation(() => Promise.resolve({
     json : () => Promise.resolve(fakeLocalities)

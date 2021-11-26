@@ -8,8 +8,8 @@ export default function App() {
   const [state, setState] = useState("");
   const [validation, setValidation] = useState("");
 
-  async function postcodeSearch(q){
-    try{
+  async function postcodeSearch(q) {
+    try {
       const result = await fetch(`https://digitalapi.auspost.com.au/postcode/search.json?q=${encodeURIComponent(q)}&excludePostBoxFlag=true`, {
         "method": "GET",
         "headers": {
